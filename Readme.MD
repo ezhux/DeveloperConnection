@@ -5,11 +5,11 @@ and have common Organizations on Github
 
 The HTTP server part is done using Akka-http
 
-For communication with Twitter I'm using the *twitter4s* lib. This is not ideal, because *twitter4s* uses a separate 
-(classic) AKKA ActorSystem, whereas akka-http server created another ActorSystem, but a typed one. It would be better 
+For communication with Twitter, I'm using the *twitter4s* lib. This is not ideal, because *twitter4s* uses a separate 
+(classic) Akka ActorSystem, whereas akka-http server creates another ActorSystem, but a typed one. It would be better 
 to re-use the same ActorSystem. 
 
-For communication with Github I've opted for calling the REST API directly and unmarshalling results, because it was 
+For communication with Github, I've opted for calling the REST API directly and unmarshalling results, because it was 
 just easier than using a library. Scala libs for Github that I found require using Github API credentials, but those 
 endpoints are public (but are rate limited more strictly).
 
